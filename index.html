@@ -138,13 +138,19 @@
         <div id="tab-reports" class="tab-content">
             <div class="glass p-3 mb-3 pb-x">
                 <h3><i class="fas fa-file-excel"></i> التقارير والقوائم</h3>
+                <div class="mt-1 mb-2">
+                    <label for="rep-student-search" class="text-right w-100">بحث الطالب (اكتب من أول حرف، من دون اختيار صف أو شعبة)</label>
+                    <input id="rep-student-search" class="glass-input m-0" type="search" autocomplete="off" placeholder="ابحث باسم الطالب أو رقم القيد..." oninput="searchReportStudents()">
+                    <div id="rep-student-results" class="report-search-results" role="listbox" aria-label="نتائج بحث الطلاب"></div>
+                    <div id="rep-selected-student" class="report-selected-student"></div>
+                </div>
                 <div class="grid-3 mt-1 mb-2">
                     <select id="rep-class" class="glass-input m-0" onchange="updateRepSectionDropdown()"></select>
                     <select id="rep-section" class="glass-input m-0" onchange="generateReport()"><option value="">اختر الشعبة</option></select>
                     <select id="rep-driver" class="glass-input m-0" onchange="generateDriverReport()"><option value="">اختر خط النقل</option></select>
                 </div>
                 <div class="grid-2 mb-2">
-                    <button type="button" class="btn-3d success w-100" onclick="exportReportExcel()"><i class="fas fa-download"></i> كشف الصف (إكسل)</button>
+                    <button type="button" class="btn-3d success w-100" onclick="exportReportExcel()"><i class="fas fa-download"></i> كشف الطلاب (إكسل)</button>
                     <button type="button" class="btn-3d warning w-100" onclick="exportDriverExcel()"><i class="fas fa-bus"></i> كشف السائق (إكسل)</button>
                 </div>
                 <div id="report-list" class="list-container"></div>
